@@ -103,7 +103,16 @@ const getAlbumByChapter = async (chapter) => {
   return album;
 };
 
+const getAlbumId = async (title) => {
+  const album = await Album.findOne({
+    title: { $regex: '^((?!string).)*$', $options: 'i' },
+  }).select('_id');
+
+  return album;
+};
+
 module.exports = {
   createNewAlbum,
   getAlbumByChapter,
+  getAlbumId,
 };

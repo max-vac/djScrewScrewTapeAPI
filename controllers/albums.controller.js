@@ -1,5 +1,9 @@
 const albumsMongo = require('../models/albums.mongo');
-const { createNewAlbum, getAlbumByChapter } = require('../models/albums.model');
+const {
+  createNewAlbum,
+  getAlbumByChapter,
+  getAlbumId,
+} = require('../models/albums.model');
 
 const httpCreateNewAlbum = async (req, res) => {
   const album = req.body;
@@ -36,7 +40,16 @@ const httpGetAlbumByChapter = async (req, res) => {
   return res.status(200).json(album);
 };
 
+const httpGetAlbumId = async (req, res) => {
+  console.log(req.query);
+
+  const album = await getAlbumId(req.query.title);
+
+  return res.status(200).json(album);
+};
+
 module.exports = {
   httpCreateNewAlbum,
   httpGetAlbumByChapter,
+  httpGetAlbumId,
 };
