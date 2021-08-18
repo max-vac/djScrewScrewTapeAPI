@@ -88,6 +88,20 @@ const createNewAlbum = async (album) => {
   generateSong(album.songs, newAlbum._id);
 };
 
+const getAlbumByChapter = async (chapter) => {
+  const album = await Album.findOne({ chapter: chapter }).populate({
+    path: 'songs.song',
+    model: 'Song',
+    populate: {
+      path: 'artists',
+      model: 'Artist',
+    },
+  });
+
+  return album;
+};
+
 module.exports = {
   createNewAlbum,
+  getAlbumByChapter,
 };

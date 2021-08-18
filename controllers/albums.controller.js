@@ -1,5 +1,5 @@
 const albumsMongo = require('../models/albums.mongo');
-const { createNewAlbum } = require('../models/albums.model');
+const { createNewAlbum, getAlbumByChapter } = require('../models/albums.model');
 
 const httpCreateNewAlbum = async (req, res) => {
   const album = req.body;
@@ -20,9 +20,24 @@ const httpCreateNewAlbum = async (req, res) => {
 
   console.log('contorller');
   await createNewAlbum(album);
+  return res.status(201).json(album);
+};
+
+const httpGetAlbumByChapter = async (req, res) => {
+  const chapter = +req.params.chapter;
+
+  if (!chapter) {
+    return res.status(400).json({
+      error: 'No valid album chapter',
+    });
+  }
+
+  const album = await getAlbumByChapter(chapter);
+
   return res.status(200).json(album);
 };
 
 module.exports = {
   httpCreateNewAlbum,
+  httpGetAlbumByChapter,
 };
