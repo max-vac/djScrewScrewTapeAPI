@@ -91,9 +91,11 @@ const createNewAlbum = async (album) => {
 const getAlbumByChapter = async (chapter) => {
   const album = await Album.findOne({ chapter: chapter }).populate({
     path: 'songs.song',
+    select: 'title',
     model: 'Song',
     populate: {
       path: 'artists',
+      select: 'name',
       model: 'Artist',
     },
   });

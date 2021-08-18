@@ -18,7 +18,6 @@ const httpCreateNewAlbum = async (req, res) => {
     });
   }
 
-  console.log('contorller');
   await createNewAlbum(album);
   return res.status(201).json(album);
 };
