@@ -1,0 +1,74 @@
+{
+  "title": "Feel My Pain",
+  "chapter": 110,
+  "songs": [
+    { "disc": 1, "track": 1, "title": "Intro", "artists": ["Southside"] },
+    {
+      "disc": 1,
+      "track": 2,
+      "title": "Do You Like What You See",
+      "artists": ["Double D", "Pimp Tyte", "Fat Pat", "Big Pokey"]
+    },
+    {
+      "disc": 1,
+      "track": 3,
+      "title": "Southside Remix",
+      "artists": ["Lil Keke"]
+    },
+    {
+      "disc": 1,
+      "track": 4,
+      "title": "I’m A Hoe",
+      "artists": ["Ice Cube", "Master P"]
+    },
+    { "disc": 1, "track": 5, "title": "These Days", "artists": ["Nate Dogg"] },
+    {
+      "disc": 1,
+      "track": 6,
+      "title": "Why You Peein Me",
+      "artists": ["Lil Keke", "Fat Pat"]
+    },
+    { "disc": 1, "track": 7, "title": "Freestyle", "artists": ["Big Moe"] },
+    {
+      "disc": 2,
+      "track": 1,
+      "title": "Freestyle",
+      "artists": ["Esg", "Mafio", "Lil 3rd", "Big Baby", "Hawk", "Will Lean"]
+    },
+    {
+      "disc": 2,
+      "track": 2,
+      "title": "Ride For Your Homie Interlude",
+      "artists": ["Unknown"]
+    },
+    {
+      "disc": 2,
+      "track": 3,
+      "title": "If Haven Got A Ghetto",
+      "artists": ["2pac"]
+    },
+    {
+      "disc": 2,
+      "track": 4,
+      "title": "Stay In Line Hoe",
+      "artists": ["Big Tymers", "Bg"]
+    },
+    {
+      "disc": 2,
+      "track": 5,
+      "title": "Thinkin About U",
+      "artists": ["Mia X", "Master P"]
+    },
+    {
+      "disc": 2,
+      "track": 6,
+      "title": "I’m Coming",
+      "artists": ["Puff Daddy", "Notorious Big"]
+    },
+    { "disc": 2, "track": 7, "title": "Freestyle", "artists": ["Bg"] }
+  ],
+  "year": 1994,
+  "image": "something",
+  "price": 16.99,
+  "link": "linkgoeshere"
+}
