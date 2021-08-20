@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const albumsRouter = require('./routes/albums.router');
+const songsRouter = require('./routes/songs.router');
 const app = express();
 
 app.use(
@@ -14,5 +15,6 @@ app.use(
 app.use(express.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/albums', albumsRouter);
+app.use('/songs', songsRouter);
 
 module.exports = app;
