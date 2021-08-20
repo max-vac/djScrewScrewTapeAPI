@@ -103,6 +103,12 @@ const getAlbumByChapter = async (chapter) => {
   return album;
 };
 
+const getAllAlbums = async () => {
+  const albums = await Album.find();
+
+  return albums;
+};
+
 const getAlbumId = async (title) => {
   const album = await Album.findOne({
     title: { $regex: '^((?!string).)*$', $options: 'i' },
@@ -132,4 +138,5 @@ module.exports = {
   getAlbumByChapter,
   getAlbumId,
   getAlbumById,
+  getAllAlbums,
 };

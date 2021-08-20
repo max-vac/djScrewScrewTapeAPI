@@ -4,6 +4,7 @@ const {
   getAlbumByChapter,
   getAlbumId,
   getAlbumById,
+  getAllAlbums,
 } = require('../models/albums.model');
 
 const httpCreateNewAlbum = async (req, res) => {
@@ -25,6 +26,12 @@ const httpCreateNewAlbum = async (req, res) => {
 
   await createNewAlbum(album);
   return res.status(201).json(album);
+};
+
+const httpGetAllAlbums = async (req, res) => {
+  const albums = await getAllAlbums();
+
+  return res.status(200).json(albums);
 };
 
 const httpGetAlbumByChapter = async (req, res) => {
@@ -60,4 +67,5 @@ module.exports = {
   httpGetAlbumByChapter,
   httpGetAlbumId,
   httpGetAlbumById,
+  httpGetAllAlbums,
 };
