@@ -16,6 +16,23 @@ const getAllArtists = async () => {
   return allArtists;
 };
 
+const getArtistById = async (id) => {
+  const artistById = await Artist.findById(id)
+    .populate({
+      path: 'albums',
+      model: 'Album',
+      select: 'title',
+    })
+    .populate({
+      path: 'songs',
+      model: 'Song',
+      select: 'title',
+    });
+
+  return artistById;
+};
+
 module.exports = {
   getAllArtists,
+  getArtistById,
 };
