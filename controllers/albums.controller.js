@@ -3,6 +3,7 @@ const {
   createNewAlbum,
   getAlbumByChapter,
   getAlbumId,
+  getAlbumById,
 } = require('../models/albums.model');
 
 const httpCreateNewAlbum = async (req, res) => {
@@ -41,9 +42,15 @@ const httpGetAlbumByChapter = async (req, res) => {
 };
 
 const httpGetAlbumId = async (req, res) => {
-  console.log(req.query);
-
   const album = await getAlbumId(req.query.title);
+
+  return res.status(200).json(album);
+};
+
+const httpGetAlbumById = async (req, res) => {
+  console.log(typeof req.params.id);
+  const id = req.params.id;
+  const album = await getAlbumById(id);
 
   return res.status(200).json(album);
 };
@@ -52,4 +59,5 @@ module.exports = {
   httpCreateNewAlbum,
   httpGetAlbumByChapter,
   httpGetAlbumId,
+  httpGetAlbumById,
 };

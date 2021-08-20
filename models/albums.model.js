@@ -111,8 +111,25 @@ const getAlbumId = async (title) => {
   return album;
 };
 
+const getAlbumById = async (id) => {
+  console.log(id);
+  const album = await Album.findById(id).populate({
+    path: 'songs.song',
+    select: 'title',
+    model: 'Song',
+    populate: {
+      path: 'artists',
+      select: 'name',
+      model: 'Artist',
+    },
+  });
+
+  return album;
+};
+
 module.exports = {
   createNewAlbum,
   getAlbumByChapter,
   getAlbumId,
+  getAlbumById,
 };
