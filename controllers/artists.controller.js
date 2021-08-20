@@ -1,9 +1,11 @@
+const { getAllArtists } = require('../models/artist.model');
 
+const httpGetAllArtists = async (req, res) => {
+  const artists = await getAllArtists();
 
-async createNewArtist = (artist) => {
-  artists.insert({
-    name: artist,
-    albums: [],
-    songs: [],
-  })
-}
+  return res.status(200).json(artists);
+};
+
+module.exports = {
+  httpGetAllArtists,
+};

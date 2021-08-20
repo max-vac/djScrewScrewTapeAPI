@@ -2,6 +2,7 @@ const Album = require('./albums.mongo');
 const Song = require('./songs.mongo');
 const Artist = require('./artists.mongo');
 const mongoose = require('mongoose');
+const { all } = require('../routes/songs.router');
 
 const generateSong = async (songs, albumId) => {
   let track = 1;
@@ -104,9 +105,9 @@ const getAlbumByChapter = async (chapter) => {
 };
 
 const getAllAlbums = async () => {
-  const albums = await Album.find();
+  const allAlbums = await Album.find();
 
-  return albums;
+  return allAlbums;
 };
 
 const getAlbumId = async (title) => {
