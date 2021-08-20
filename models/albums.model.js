@@ -118,7 +118,6 @@ const getAlbumId = async (title) => {
 };
 
 const getAlbumById = async (id) => {
-  console.log(id);
   const album = await Album.findById(id).populate({
     path: 'songs.song',
     select: 'title',
