@@ -2,11 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './client/src/index.js',
-  output: {
-    path: path.join(__dirname, 'client/dist'),
-    filename: 'bundle.js',
+  devServer: {
+    historyApiFallback: true,
   },
+  output: {
+    path: path.join(__dirname, './client/dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
+  },
+  watch: true,
   module: {
     rules: [
       {
@@ -29,7 +35,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Development',
       template: './client/public/index.html',
+      filename: 'index.html',
+      inject: 'body',
     }),
   ],
 };
